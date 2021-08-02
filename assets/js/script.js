@@ -1,10 +1,23 @@
-document.body.onload = adcElemento;
+function addTowers() {
+    let ids = ["first-tower", "second-tower", "third-tower"] 
+   
+    for (let counter = 0; counter < ids.length; counter++){
 
-function adcElemento () {
-  var divNova = document.createElement("img");
-  var conteudoNovo = document.images();
-  divNova.appendChild(conteudoNovo);
+    function adcElemento () {
 
-  var divAtual = document.getElementById("geral");
-  document.body.insertBefore(divNova, divAtual);
+        let divNova = document.createElement("div");
+        divNova.setAttribute("id", ids[counter]);
+
+        let conteudoNovo = document.createTextNode("Olá!");
+
+
+        divNova.appendChild(conteudoNovo); 
+    
+        let divAtual = document.getElementById("area-do-jogo");
+        divAtual.appendChild(divNova);
+        }
+        adcElemento();
+    }
+    
 }
+addTowers();
