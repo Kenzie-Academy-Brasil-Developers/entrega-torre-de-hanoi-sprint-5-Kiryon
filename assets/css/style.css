@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    padding-top: 200px;
+    flex-direction: column;
+}
+header {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+section.jogo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 30px;
+}
+div.a{
+    border: 1px solid black;
+    width: 80px;
+    height: 300px;
+    text-align: center;
+}
+div.b{
+    border: 1px solid black;
+    width: 80px;
+    height: 300px;
+    text-align: center;
+}
+div.c{
+    background-image: url(../assets/img/Novo\ Projeto.png);
+    border: 1px solid black;
+    width: 80px;
+    height: 300px;
+    text-align: center;
+}
+footer{
+    margin: 30px auto;
+    text-align: center;
+}

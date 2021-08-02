@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Torre de Hanoi</title>
 </head>
 <body>
-    <header id="selecao-de-dificuldade"></header>
+    <header id="selecao-de-dificuldade" class="dificuldade">
+        <button id="3b">3 barras</button>
+        <button id="4b">4 barras</button>
+        <button id="5b">5 barras</button>
+    </header>
     <main>
-        <section id="area-do-jogo">
-            <div id="first-tower"></div>
-            <div id="second-tower"></div>
-            <div id="third-tower"></div>
+        <section id="area-do-jogo" class="jogo">
+            <div id="first-tower" class="a">A</div>
+            <div id="second-tower" class="b">B</div>
+            <div id="third-tower" class="c">C</div>
         </section>
-        <footer id="info"></footer>
+        <footer id="info" class="info">total de jogadas para um jogo perfeito</footer>
     </main>
 </body>
 </html>
