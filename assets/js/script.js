@@ -1,3 +1,4 @@
+
 let torre = [[3,2,1],[],[]];
 let position = ['p0','p1','p2','p3','t1','t2','t3']
 function animacao(){
