@@ -1,40 +1,62 @@
-body {
-    display: flex;
-    padding-top: 200px;
-    flex-direction: column;
+.jogo{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 450px;
+    width: 600px;
+    background: tomato;
 }
-header {
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-    justify-content: space-evenly;
+.torre{
+    position: relative;
 }
-section.jogo{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 30px;
+
+.torre::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    bottom: 0;
+    left: 90px;
+    background: violet;
+    border-radius: 10px 10px 0 0;
 }
-div.a{
-    border: 1px solid black;
-    width: 80px;
-    height: 300px;
-    text-align: center;
+.barra{
+    position: absolute;
+    background: yellow;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    margin-left: 10px;
+    z-index: 2;
+    transition: left 1s,bottom 1s 1s;
 }
-div.b{
-    border: 1px solid black;
-    width: 80px;
-    height: 300px;
-    text-align: center;
+.d1{
+    width: 120px;
+    margin-left: 40px;
 }
-div.c{
-    background-image: url(../assets/img/Novo\ Projeto.png);
-    border: 1px solid black;
-    width: 80px;
-    height: 300px;
-    text-align: center;
+.d2{
+    width: 150px;
+    margin-left: 25px;
 }
-footer{
-    margin: 30px auto;
-    text-align: center;
+.t1{
+    left: 0;
+}
+.t2{
+    left: 200px;
+}
+.t3{
+    left: 400px;
+}
+.p1 {
+    bottom:0;
+}
+.p2{
+    bottom:35px;
+}
+.p3{
+    bottom: 70px;
+}
+.p0{
+    bottom: 350px;
 }
