@@ -22,6 +22,32 @@
     border-radius: 10px 10px 0 0;
 }
 .barra{
+}
+#d1{
+    width: 120px;
+    margin-left: 40px;
+    position: absolute;
+    background: yellow;
+    height: 35px;
+    width: 120px;
+    border-radius: 15px;
+    margin-left: 35px;
+    z-index: 2;
+    transition: left 1s,bottom 1s 1s;
+}
+#d2{
+    width: 150px;
+    margin-left: 25px;
+    position: absolute;
+    background: yellow;
+    height: 35px;
+    width: 150px;
+    border-radius: 15px;
+    margin-left: 20px;
+    z-index: 2;
+    transition: left 1s,bottom 1s 1s;
+}
+#d3{
     position: absolute;
     background: yellow;
     height: 35px;
@@ -30,14 +56,6 @@
     margin-left: 10px;
     z-index: 2;
     transition: left 1s,bottom 1s 1s;
-}
-.d1{
-    width: 120px;
-    margin-left: 40px;
-}
-.d2{
-    width: 150px;
-    margin-left: 25px;
 }
 .t1{
     left: 0;
