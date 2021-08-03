@@ -1,0 +1,61 @@
+#area-do-jogo{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 50px;
+}
+
+#first-tower{
+    background-image: url("../img/NovoProjeto.png");
+    background-size: 86px;
+    background-position: center bottom;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 150px;
+    padding:5px;
+}
+
+#second-tower{
+    background-image: url("../img/NovoProjeto.png");
+    background-size: 86px;
+    background-position: center bottom;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 150px;
+    padding:5px;
+}
+
+#third-tower{
+    background-image: url("../img/NovoProjeto.png");
+    background-size: 86px;
+    background-position: center bottom;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 150px;
+    padding: 5px;
+}
+
+#first-disc{
+    position: absolute;
+    background-color: blue;
+    width: 40px;
+    left:30px;
+    top: 83px;
+}
+#second-disc{
+    position: absolute;
+    background-color: brown;
+    width: 60px;
+    left:20px;
+    top: 103px;
+}
+#third-disc{
+    position: absolute;
+    background-color: chartreuse;
+    width: 80px;
+    left:12px;
+    top: 123px;
+}
