@@ -50,7 +50,7 @@ for (let i = 3; i >= 0; i--) {
   let bloco = document.createElement("div");
   bloco.setAttribute('id', `bloco${i}`);
   bloco.setAttribute('class', 'bloco');
-  bloco.style.width = `${(1+i)*50}px`;
+//   bloco.style.width = `${(1+i)*25}px`;
   start.appendChild(bloco);
 }
 
@@ -100,7 +100,6 @@ function victoryCondition(){
 
         if(qtdFilhosT2 === 6 || qtdFilhosT3 === 6){
             alert("YOU WON!!!");
-            alert("Aperte F5 para recomeçar o Jogo.");
         }
     });
 }

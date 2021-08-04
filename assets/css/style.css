@@ -1,39 +1,57 @@
-h1, h3{
-    text-align: center;
+h2{
+    font-size: 20px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    font-weight: bold;
+    margin-top: 45px;
 }
-
+header{
+    display: flex;
+}
+main{
+    margin-top: 30%;
+}
 #container {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row nowrap;
     margin: 0 auto;
-    align-content:space-between;
+    align-content: space-between;
+    justify-content: space-evenly;
 }
 .tower {
     position: relative;
-    width: 250px;
-    height: 400px;
-    display: flex; 
-    flex-direction: column-reverse; 
+    width: 215px;
+    height: 275px;
+    display: flex;
+    flex-direction: column-reverse;
     align-items: center;
+    border: solid black 2px;
+    border-radius: 15px;
     }
 .bloco {
-    height: 35px;
-    border: solid black 2px;
-    border-radius: 10px;
+    height: 20px;
+    border: dashed black 2px;
+    border-radius: 35px;
+    margin: 1px;
         }
 #bloco0{
     background-color: purple;
+    width: 20px;
         }
 #bloco1{
     background-color: green;
+    width: 40px;
         }
 #bloco2{
     background-color: yellow;
+    width: 60px;
         }
 #bloco3{
     background-color: orange;
+    width: 80px;
         }
 #bloco4{
     display: none;
@@ -47,10 +65,68 @@ h1, h3{
 
 .barras{
     background-color: black;
-    height: 80%;
-    width: 90%;
+    height: 40%;
+    width: 5%;
     position: absolute;
     float: left;
     z-index: -1;
        }
-
+input{
+    margin: 0 auto;
+    position: absolute;
+    left: 35%;
+    margin-top: 10px;
+    width: 100px;
+    border-radius: 20px;
+    border-style: none;
+    box-shadow: 8px 6px 11px 0px rgb(0 0 0 / 75%);
+    background-color: #0875F7;
+    color: white;
+}
+body{
+    background: linear-gradient(rgba(255, 98, 71), rgb(255, 253, 109));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+img{
+    width: 100px;
+}
+.bloco:hover{
+    border: dashed white 3px;
+}
+input:hover{
+    background-color: #00356b;
+}
+.tower:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 375px){
+    input{
+        left: 37%;
+    }
+}
+@media screen and (min-width: 425px){
+    input{
+        left: 38%;
+    }
+}
+@media screen and (min-width: 768px){
+    input{
+        left: 43%;
+    }
+}
+@media screen and (min-width: 1024px){
+    input{
+        left: 45%;
+    }
+}
+@media screen and (min-width: 1440px){
+    input{
+        left: 46.5%;
+    }
+}
+@media screen and (min-width: 2560px){
+    input{
+        left: 48%;
+    }
+}
