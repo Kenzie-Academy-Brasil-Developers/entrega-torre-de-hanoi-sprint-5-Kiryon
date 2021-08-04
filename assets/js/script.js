@@ -1,69 +1,61 @@
+let container = document.getElementById("container")
 
+let start = document.createElement('div');
+start.setAttribute('id', 'start');
+start.setAttribute('class' , 'tower');
+container.appendChild(start);
+let barra1 = document.createElement('div');
+barra1.setAttribute('id', 'barra1');
+barra1.setAttribute('class', 'barras');
+start.appendChild(barra1);
 
-let torre = [[3,2,1],[],[]];
-let position = ['p0','p1','p2','p3','t1','t2','t3']
+let offset = document.createElement('div');
+offset.setAttribute('id', 'offset');
+offset.setAttribute('class', 'tower');
+container.appendChild(offset);
+let barra2 = document.createElement('div');
+barra2.setAttribute('id', 'barra2');
+barra2.setAttribute('class', 'barras');
+offset.appendChild(barra2);
 
+let end = document.createElement('div');
+end.setAttribute('id' , 'end');
+end.setAttribute('class', 'tower');
+container.appendChild(end);
+let barra3 = document.createElement('div');
+barra3.setAttribute('id', 'barra3');
+barra3.setAttribute('class', 'barras');
+end.appendChild(barra3);
 
-function initPos(){
-    torre.forEach((torre, torreid) => {
-        torre.forEach((barra, position) => {
-            let r = document.querySelector('.d'+barra)
-            console.log(r)
-            r.classList.remove('t'+(torreid))
-            r.classList.remove('p'+(position))
-            let d = document.querySelector('.d'+barra)
-            d.classList.add('t'+(torreid+1));
-            d.classList.add('p'+(position+1));
-        })
-    })
+for (let i = 3; i >= 0; i--) {
+  let bloco = document.createElement("div");
+  bloco.setAttribute('id', `bloco${i}`);
+  bloco.setAttribute('class', 'bloco');
+  bloco.style.width = `${(1+i)*50}px`;
+  start.appendChild(bloco);
 }
 
+container.addEventListener("click", selected);
+let firstClick;
+let secondClick;
 
-function mover(datorre, paratorre){
-
-    if(!torre[datorre].length)return
-    let barra = torre[datorre].pop();
-    if (torre[datorre].length){
-        if (torre[datorre][torre[paratorre].length-1]<barra){
-            return
-        }
-    }
-    let d = document.querySelector('.d'+barra)
-    d.classList.add('p0');
-    torre[paratorre].push(barra);
-    setTimeout(initPos,2000);
+function validate() {
+  if (secondClick.childElementCount === 1){
+    secondClick.appendChild(firstClick.lastChild);
+  }
+  if (secondClick.lastChild.id > firstClick.lastChild.id) {
+    secondClick.appendChild(firstClick.lastChild);
+  } 
 }
-initPos();
 
-
-
-
-
-
-
-
-// let torre = [[3,2,1],[],[]];
-// let position = ['p0','p1','p2','p3','t1','t2','t3']
-
-
-// function initPos(){
-//     let barra1 = document.querySelector('#d1')
-//         console.log(barra1)
-// }
-// initPos();
-
-
-// function mover(datorre, paratorre){
-
-//     if(!torre[datorre].length)return
-//     let barra = torre[datorre].pop();
-//     if (torre[datorre].length){
-//         if (torre[datorre][torre[paratorre].length-1]<barra){
-//             return
-//         }
-//     }
-//     let d = document.querySelector('#d'+barra)
-//     d.classList.add('p0');
-//     torre[paratorre].push(barra);
-//     setTimeout(initPos,2000);
-// }
+function selected(event) {
+  if (firstClick == undefined){
+    firstClick = event.target.closest("div .tower")
+  } else {
+    secondClick = event.target.closest("div .tower")
+    
+    validate()
+    firstClick = undefined
+    secondClick = undefined
+  }
+}
