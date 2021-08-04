@@ -38,7 +38,7 @@ h1, h3{
 .barras{
     background-color: black;
     height: 80%;
-    width: 5%;
+    width: 90%;
     position: absolute;
     float: left;
     z-index: -1;
