@@ -1,80 +1,62 @@
-.jogo{
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 450px;
-    width: 600px;
-    background: tomato;
-}
-.torre{
+#area-do-jogo{
+    display: flex;
+    justify-content: space-around;
     position: relative;
+    top: 50px;
+    height: 150px;
 }
 
-.torre::after {
-    content: " ";
-    display: block;
-    position: absolute;
-    width: 20px;
-    height: 200px;
-    bottom: 0;
-    left: 90px;
-    background: violet;
-    border-radius: 10px 10px 0 0;
+#first-tower{
+    background-image: url("../img/NovoProjeto.png");
+    background-size: 86px;
+    background-position: center bottom;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 110px;
+    padding:5px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
 }
-.barra{
+
+#second-tower{
+    background-image: url("../img/NovoProjeto.png");
+    background-size: 86px;
+    background-position: center bottom;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 110px;
+    padding:5px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
 }
-#d1{
-    width: 120px;
-    margin-left: 40px;
-    position: absolute;
-    background: yellow;
-    height: 35px;
-    width: 120px;
-    border-radius: 15px;
-    margin-left: 35px;
-    z-index: 2;
-    transition: left 1s,bottom 1s 1s;
+
+#third-tower{
+    background-image: url("../img/NovoProjeto.png");
+    background-size: 86px;
+    background-position: center bottom;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 80px;
+    height: 110px;
+    padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
 }
-#d2{
-    width: 150px;
-    margin-left: 25px;
-    position: absolute;
-    background: yellow;
-    height: 35px;
-    width: 150px;
-    border-radius: 15px;
-    margin-left: 20px;
-    z-index: 2;
-    transition: left 1s,bottom 1s 1s;
+
+#first-disc{
+    width: 80px;
+    background-color: hotpink;
 }
-#d3{
-    position: absolute;
-    background: yellow;
-    height: 35px;
-    width: 180px;
-    border-radius: 15px;
-    margin-left: 10px;
-    z-index: 2;
-    transition: left 1s,bottom 1s 1s;
+#second-disc{
+    width: 60px;
+    background-color: greenyellow;
 }
-.t1{
-    left: 0;
-}
-.t2{
-    left: 200px;
-}
-.t3{
-    left: 400px;
-}
-.p1 {
-    bottom:0;
-}
-.p2{
-    bottom:35px;
-}
-.p3{
-    bottom: 70px;
-}
-.p0{
-    bottom: 350px;
+#third-disc{
+    width: 40px;
+    background-color: blueviolet;
 }

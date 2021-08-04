@@ -1,29 +1,64 @@
-let torre = [[3,2,1],[],[]];
-let position = ['p0','p1','p2','p3','t1','t2','t3']
-function initPos(){
-    torre.forEach((torre, torreid) => {
-        torre.forEach((barra, position)=> {
-            let r = document.querySelector('.d'+barra)
-            r.classList.remove('t'+(torreid))
-            r.classList.remove('p'+(position))
-            let d = document.querySelector('.d'+barra)
-            d.classList.add('t'+(torreid+1));
-            d.classList.add('p'+(position+1));
-        })
-    })
-}
-function mover(datorre, paratorre){
+let ids = ["first-tower", "second-tower", "third-tower"]; 
+function addTowers() {
+    
+    for (let counter = 0; counter < ids.length; counter++){
 
-    if(!torre[datorre].length)return
-    let barra = torre[datorre].pop();
-    if (torre[datorre].length){
-        if (torre[datorre][torre[paratorre].length-1]<barra){
-            return
+    function adcElemento () {
+        let divNova = document.createElement("div");
+        divNova.setAttribute("id", ids[counter]);
+
+        let conteudoNovo = document.createTextNode("");
+        divNova.appendChild(conteudoNovo);
+    
+        let divAtual = document.getElementById("area-do-jogo");
+        divAtual.appendChild(divNova);
         }
+        adcElemento();
     }
-    let d = document.querySelector('.d'+barra)
-    d.classList.add('p0');
-    torre[paratorre].push(barra);
-    setTimeout(initPos,2000);
 }
-initPos();
+addTowers();
+
+let idsD = [" ", "first-disc", "second-disc", "third-disc"];
+function addDiscs() {
+    for (let counter = 1; counter < idsD.length; counter++){
+
+    function adcElemento () {
+        let divNova = document.createElement("div");
+        divNova.setAttribute("id", idsD[counter]);
+        divNova.setAttribute("class", counter);
+
+        let conteudoNovo = document.createTextNode(counter);
+        divNova.appendChild(conteudoNovo); 
+    
+        let divAtual = document.getElementById("first-tower");
+        divAtual.appendChild(divNova);
+        }
+        adcElemento();
+    }
+}
+addDiscs();
+
+
+function interpretaEventoClick(){
+    let areaClick = document.getElementById('principal');
+    areaClick.addEventListener("click", function(evt){
+
+        let current = evt.target.id;
+        
+        let idTorre = document.getElementById(current);
+        let qtdFilhos = idTorre.childElementCount;
+        
+        let topoFilho = idTorre.lastElementChild;
+
+        
+        console.log(current);
+        console.log(qtdFilhos);
+        console.log(topoFilho);
+
+        let torreRecebedora = document.getElementById("ESCOLHERTORRE");
+        torreRecebedora.appendChild(topoFilho);
+
+
+    });
+}
+interpretaEventoClick();
