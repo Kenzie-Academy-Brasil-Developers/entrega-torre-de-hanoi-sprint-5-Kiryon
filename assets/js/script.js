@@ -80,3 +80,35 @@ function selected(event) {
     secondClick = undefined
   }
 }
+
+function victoryCondition(){
+
+        let areaClick = document.getElementById('container');
+        areaClick.addEventListener("click", function(evt){
+
+            let current = evt.target.id;
+            let idTorre = document.getElementById(current);
+            let qtdFilhos = idTorre.childElementCount;
+            
+            console.log(current);
+            console.log(qtdFilhos);
+
+            let idTorre2 = document.getElementById('offset');
+            let qtdFilhosT2 = idTorre2.childElementCount;
+            let idTorre3 = document.getElementById('end');
+            let qtdFilhosT3 = idTorre3.childElementCount;
+
+            if(qtdFilhosT2 === 6 || qtdFilhosT3 === 6){
+                alert("YOU WON!!!");
+                alert("Aperte F5 para recomeçar o Jogo.");
+            }
+        });
+    }
+    victoryCondition();
+
+// function restart(){
+//     let btn = document.getElementById('btnn');
+//     btn.addEventListener("click", function(){
+//         window.location.reload(btn);
+//     });
+// }
