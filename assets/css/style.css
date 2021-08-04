@@ -15,6 +15,9 @@
     width: 80px;
     height: 110px;
     padding:5px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
 }
 
 #second-tower{
@@ -26,6 +29,9 @@
     width: 80px;
     height: 110px;
     padding:5px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
 }
 
 #third-tower{
@@ -37,8 +43,26 @@
     width: 80px;
     height: 110px;
     padding: 5px;
+    display: flex; 
+    flex-direction: column-reverse; 
+    align-items: center;
 }
 
+#first-disc{
+    width: 80px;
+    background-color: hotpink;
+}
+#second-disc{
+    width: 60px;
+    background-color: greenyellow;
+}
+#third-disc{
+    width: 40px;
+    background-color: blueviolet;
+}
+
+
+/* 
 #first-disc{
     position: absolute;
     background-color: blueviolet;
@@ -59,7 +83,7 @@
     width: 80px;
     left:12px;
     top: 83px;
-}
+} */
 #btn_firstTo_second{
     color: black;
     font-weight: bolder;
