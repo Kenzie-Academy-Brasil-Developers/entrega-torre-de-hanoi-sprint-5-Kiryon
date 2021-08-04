@@ -35,6 +35,16 @@ h1, h3{
 #bloco3{
     background-color: orange;
         }
+#bloco4{
+    display: none;
+        }
+#bloco5{
+    display: none;
+        }
+#bloco6{
+    display: none;
+        }
+
 .barras{
     background-color: black;
     height: 80%;
