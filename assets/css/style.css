@@ -1,62 +1,45 @@
-#area-do-jogo{
+h1, h3{
+    text-align: center;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row nowrap;
+    margin: 0 auto;
+    align-content:space-between;
+}
+.tower {
     position: relative;
-    top: 50px;
-    height: 150px;
-}
-
-#first-tower{
-    background-image: url("../img/NovoProjeto.png");
-    background-size: 86px;
-    background-position: center bottom;
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 80px;
-    height: 110px;
-    padding:5px;
+    width: 250px;
+    height: 400px;
     display: flex; 
     flex-direction: column-reverse; 
     align-items: center;
-}
-
-#second-tower{
-    background-image: url("../img/NovoProjeto.png");
-    background-size: 86px;
-    background-position: center bottom;
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 80px;
-    height: 110px;
-    padding:5px;
-    display: flex; 
-    flex-direction: column-reverse; 
-    align-items: center;
-}
-
-#third-tower{
-    background-image: url("../img/NovoProjeto.png");
-    background-size: 86px;
-    background-position: center bottom;
-    border: 2px solid black;
-    border-radius: 5px;
-    width: 80px;
-    height: 110px;
-    padding: 5px;
-    display: flex; 
-    flex-direction: column-reverse; 
-    align-items: center;
-}
-
-#first-disc{
-    width: 80px;
-    background-color: hotpink;
-}
-#second-disc{
-    width: 60px;
-    background-color: greenyellow;
-}
-#third-disc{
-    width: 40px;
-    background-color: blueviolet;
-}
+    }
+.bloco {
+    height: 35px;
+    border: solid black 2px;
+    border-radius: 10px;
+        }
+#bloco0{
+    background-color: purple;
+        }
+#bloco1{
+    background-color: green;
+        }
+#bloco2{
+    background-color: yellow;
+        }
+#bloco3{
+    background-color: orange;
+        }
+.barras{
+    background-color: black;
+    height: 80%;
+    width: 5%;
+    position: absolute;
+    float: left;
+    z-index: -1;
+       }

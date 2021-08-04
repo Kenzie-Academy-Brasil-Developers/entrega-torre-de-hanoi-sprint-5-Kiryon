@@ -1,64 +1,61 @@
-let ids = ["first-tower", "second-tower", "third-tower"]; 
-function addTowers() {
-    
-    for (let counter = 0; counter < ids.length; counter++){
+let container = document.getElementById("container")
 
-    function adcElemento () {
-        let divNova = document.createElement("div");
-        divNova.setAttribute("id", ids[counter]);
+let start = document.createElement('div');
+start.setAttribute('id', 'start');
+start.setAttribute('class' , 'tower');
+container.appendChild(start);
+let barra1 = document.createElement('div');
+barra1.setAttribute('id', 'barra1');
+barra1.setAttribute('class', 'barras');
+start.appendChild(barra1);
 
-        let conteudoNovo = document.createTextNode("");
-        divNova.appendChild(conteudoNovo);
-    
-        let divAtual = document.getElementById("area-do-jogo");
-        divAtual.appendChild(divNova);
-        }
-        adcElemento();
-    }
+let offset = document.createElement('div');
+offset.setAttribute('id', 'offset');
+offset.setAttribute('class', 'tower');
+container.appendChild(offset);
+let barra2 = document.createElement('div');
+barra2.setAttribute('id', 'barra2');
+barra2.setAttribute('class', 'barras');
+offset.appendChild(barra2);
+
+let end = document.createElement('div');
+end.setAttribute('id' , 'end');
+end.setAttribute('class', 'tower');
+container.appendChild(end);
+let barra3 = document.createElement('div');
+barra3.setAttribute('id', 'barra3');
+barra3.setAttribute('class', 'barras');
+end.appendChild(barra3);
+
+for (let i = 3; i >= 0; i--) {
+  let bloco = document.createElement("div");
+  bloco.setAttribute('id', `bloco${i}`);
+  bloco.setAttribute('class', 'bloco');
+  bloco.style.width = `${(1+i)*50}px`;
+  start.appendChild(bloco);
 }
-addTowers();
 
-let idsD = [" ", "first-disc", "second-disc", "third-disc"];
-function addDiscs() {
-    for (let counter = 1; counter < idsD.length; counter++){
+container.addEventListener("click", selected);
+let firstClick;
+let secondClick;
 
-    function adcElemento () {
-        let divNova = document.createElement("div");
-        divNova.setAttribute("id", idsD[counter]);
-        divNova.setAttribute("class", counter);
+function validate() {
+  if (secondClick.childElementCount === 1){
+    secondClick.appendChild(firstClick.lastChild);
+  }
+  if (secondClick.lastChild.id > firstClick.lastChild.id) {
+    secondClick.appendChild(firstClick.lastChild);
+  } 
+}
 
-        let conteudoNovo = document.createTextNode(counter);
-        divNova.appendChild(conteudoNovo); 
+function selected(event) {
+  if (firstClick == undefined){
+    firstClick = event.target.closest("div .tower")
+  } else {
+    secondClick = event.target.closest("div .tower")
     
-        let divAtual = document.getElementById("first-tower");
-        divAtual.appendChild(divNova);
-        }
-        adcElemento();
-    }
+    validate()
+    firstClick = undefined
+    secondClick = undefined
+  }
 }
-addDiscs();
-
-
-function interpretaEventoClick(){
-    let areaClick = document.getElementById('principal');
-    areaClick.addEventListener("click", function(evt){
-
-        let current = evt.target.id;
-        
-        let idTorre = document.getElementById(current);
-        let qtdFilhos = idTorre.childElementCount;
-        
-        let topoFilho = idTorre.lastElementChild;
-
-        
-        console.log(current);
-        console.log(qtdFilhos);
-        console.log(topoFilho);
-
-        let torreRecebedora = document.getElementById("ESCOLHERTORRE");
-        torreRecebedora.appendChild(topoFilho);
-
-
-    });
-}
-interpretaEventoClick();
