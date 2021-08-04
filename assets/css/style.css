@@ -3,6 +3,7 @@
     justify-content: space-around;
     position: relative;
     top: 50px;
+    height: 150px;
 }
 
 #first-tower{
@@ -12,7 +13,7 @@
     border: 2px solid black;
     border-radius: 5px;
     width: 80px;
-    height: 150px;
+    height: 110px;
     padding:5px;
 }
 
@@ -23,7 +24,7 @@
     border: 2px solid black;
     border-radius: 5px;
     width: 80px;
-    height: 150px;
+    height: 110px;
     padding:5px;
 }
 
@@ -34,28 +35,37 @@
     border: 2px solid black;
     border-radius: 5px;
     width: 80px;
-    height: 150px;
+    height: 110px;
     padding: 5px;
 }
 
 #first-disc{
     position: absolute;
-    background-color: blue;
+    background-color: blueviolet;
     width: 40px;
     left:30px;
-    top: 83px;
+    top: 43px;
 }
 #second-disc{
     position: absolute;
     background-color: brown;
     width: 60px;
     left:20px;
-    top: 103px;
+    top: 63px;
 }
 #third-disc{
     position: absolute;
     background-color: chartreuse;
     width: 80px;
     left:12px;
-    top: 123px;
+    top: 83px;
+}
+#btn_firstTo_second{
+    color: black;
+    font-weight: bolder;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 70px;
 }
