@@ -55,7 +55,7 @@ function interpretaEventoClick(){
         console.log(qtdFilhos);
         console.log(topoFilho);
 
-        let torreRecebedora = document.getElementById("ESCOLHERTORRE");
+        let torreRecebedora = document.getElementById("second-tower");
         torreRecebedora.appendChild(topoFilho);
 
 
@@ -63,6 +63,30 @@ function interpretaEventoClick(){
 }
 interpretaEventoClick();
 
+
+function victoryCondition(){
+    let areaClick = document.getElementById('principal');
+    areaClick.addEventListener("click", function(evt){
+
+        let current = evt.target.id;
+        
+        let idTorre = document.getElementById(current);
+        let qtdFilhos = idTorre.childElementCount;
+        
+        console.log(current);
+        console.log(qtdFilhos);
+
+        let idTorre2 = document.getElementById('second-tower');
+        let qtdFilhosT2 = idTorre2.childElementCount;
+        let idTorre3 = document.getElementById('third-tower');
+        let qtdFilhosT3 = idTorre3.childElementCount;
+
+        if(qtdFilhosT2 === 3 || qtdFilhosT3 === 3){
+            console.log("YOU WON!!!");
+        }
+    });
+}
+victoryCondition();    
 
 
 
