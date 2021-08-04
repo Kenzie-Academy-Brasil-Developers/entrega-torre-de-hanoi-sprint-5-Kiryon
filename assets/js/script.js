@@ -7,7 +7,7 @@ function addTowers() {
         let divNova = document.createElement("div");
         divNova.setAttribute("id", ids[counter]);
 
-        let conteudoNovo = document.createTextNode("");
+        let conteudoNovo = document.createTextNode(".");
         divNova.appendChild(conteudoNovo);
     
         let divAtual = document.getElementById("area-do-jogo");
@@ -39,54 +39,151 @@ function addDiscs() {
 addDiscs();
 
 
-function interpretaEventoClick(){
+// function interpretaEventoClick(){
+//     let areaClick = document.getElementById('principal');
+//     areaClick.addEventListener("click", function(evt){
+
+//         let current = evt.target.id;
+        
+//         let idTorre = document.getElementById(current);
+//         let qtdFilhos = idTorre.childElementCount;
+        
+//         let topoFilho = idTorre.lastElementChild;
+
+        
+//         console.log(current);
+//         console.log(qtdFilhos);
+//         console.log(topoFilho);
+
+//         let torreRecebedora = document.getElementById("second-tower");
+//         torreRecebedora.appendChild(topoFilho);
+//     });
+// }
+// interpretaEventoClick();
+
+
+let discoTopo;
+function pegarPrimeiroDisco(){
+    
     let areaClick = document.getElementById('principal');
     areaClick.addEventListener("click", function(evt){
-
-        let current = evt.target.id;
         
-        let idTorre = document.getElementById(current);
-        let qtdFilhos = idTorre.childElementCount;
-        
-        let topoFilho = idTorre.lastElementChild;
+        let idTorreAtual = evt.target.id;
+        let torreAtual = document.getElementById(idTorreAtual);
 
-        
-        console.log(current);
-        console.log(qtdFilhos);
-        console.log(topoFilho);
-
-        let torreRecebedora = document.getElementById("second-tower");
-        torreRecebedora.appendChild(topoFilho);
-
-
+        discoTopo = torreAtual.lastElementChild;
+        // console.log(discoTopo);
     });
 }
-interpretaEventoClick();
+pegarPrimeiroDisco();
 
 
-function victoryCondition(){
+function destinoDisco(){
+
     let areaClick = document.getElementById('principal');
-    areaClick.addEventListener("click", function(evt){
+    areaClick.addEventListener("click", function(event){
 
-        let current = evt.target.id;
+        let idTorreDestino = event.target.id;
+        let torreDestino = document.getElementById(idTorreDestino);
+        let qtdFilhosDestino = torreDestino.childElementCount;
+
+        console.log(qtdFilhosDestino);
         
-        let idTorre = document.getElementById(current);
-        let qtdFilhos = idTorre.childElementCount;
-        
-        console.log(current);
-        console.log(qtdFilhos);
-
-        let idTorre2 = document.getElementById('second-tower');
-        let qtdFilhosT2 = idTorre2.childElementCount;
-        let idTorre3 = document.getElementById('third-tower');
-        let qtdFilhosT3 = idTorre3.childElementCount;
-
-        if(qtdFilhosT2 === 3 || qtdFilhosT3 === 3){
-            console.log("YOU WON!!!");
+        if (discoTopo !== undefined && qtdFilhosDestino == 0) {
+            torreDestino.appendChild(discoTopo);
         }
+
+
     });
 }
-victoryCondition();    
+destinoDisco();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// container = document.getElementById('area-do-jogo');
+// container.addEventListener("click", selected);
+
+// let firstClick;
+// let secondClick;
+
+// function validar() {
+//   if (secondClick.childElementCount === 1){
+//     secondClick.appendChild(firstClick.lastChild);
+//   }
+//   if (secondClick.lastChild.id > firstClick.lastChild.id) {
+//     secondClick.appendChild(firstClick.lastChild);
+//   }
+// }
+
+// function selected(event) {
+//   if (firstClick == undefined){
+//     firstClick = event.target.closest("div .torre")
+    
+//   } else {
+//     secondClick = event.target.closest("div .torre")
+    
+//     validar()
+//     firstClick = undefined
+//     secondClick = undefined
+//   }
+// }
+
+
+
+
+
+
+
+
+
+// function victoryCondition(){
+//     let areaClick = document.getElementById('principal');
+//     areaClick.addEventListener("click", function(evt){
+
+//         let current = evt.target.id;
+        
+//         let idTorre = document.getElementById(current);
+//         let qtdFilhos = idTorre.childElementCount;
+        
+//         console.log(current);
+//         console.log(qtdFilhos);
+
+//         let idTorre2 = document.getElementById('second-tower');
+//         let qtdFilhosT2 = idTorre2.childElementCount;
+//         let idTorre3 = document.getElementById('third-tower');
+//         let qtdFilhosT3 = idTorre3.childElementCount;
+
+//         if(qtdFilhosT2 === 3 || qtdFilhosT3 === 3){
+//             alert("YOU WON!!!");
+//         }
+//     });
+// }
+// victoryCondition();    
+
 
 
 
