@@ -1,9 +1,14 @@
+
+
 let torre = [[3,2,1],[],[]];
 let position = ['p0','p1','p2','p3','t1','t2','t3']
+
+
 function initPos(){
     torre.forEach((torre, torreid) => {
-        torre.forEach((barra, position)=> {
+        torre.forEach((barra, position) => {
             let r = document.querySelector('.d'+barra)
+            console.log(r)
             r.classList.remove('t'+(torreid))
             r.classList.remove('p'+(position))
             let d = document.querySelector('.d'+barra)
@@ -12,6 +17,8 @@ function initPos(){
         })
     })
 }
+
+
 function mover(datorre, paratorre){
 
     if(!torre[datorre].length)return
@@ -27,3 +34,36 @@ function mover(datorre, paratorre){
     setTimeout(initPos,2000);
 }
 initPos();
+
+
+
+
+
+
+
+
+// let torre = [[3,2,1],[],[]];
+// let position = ['p0','p1','p2','p3','t1','t2','t3']
+
+
+// function initPos(){
+//     let barra1 = document.querySelector('#d1')
+//         console.log(barra1)
+// }
+// initPos();
+
+
+// function mover(datorre, paratorre){
+
+//     if(!torre[datorre].length)return
+//     let barra = torre[datorre].pop();
+//     if (torre[datorre].length){
+//         if (torre[datorre][torre[paratorre].length-1]<barra){
+//             return
+//         }
+//     }
+//     let d = document.querySelector('#d'+barra)
+//     d.classList.add('p0');
+//     torre[paratorre].push(barra);
+//     setTimeout(initPos,2000);
+// }

@@ -1,4 +1,4 @@
-.jogo{
+/* .jogo{
     position: absolute;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -9,7 +9,6 @@
 .torre{
     position: relative;
 }
-
 .torre::after {
     content: " ";
     display: block;
@@ -22,32 +21,6 @@
     border-radius: 10px 10px 0 0;
 }
 .barra{
-}
-#d1{
-    width: 120px;
-    margin-left: 40px;
-    position: absolute;
-    background: yellow;
-    height: 35px;
-    width: 120px;
-    border-radius: 15px;
-    margin-left: 35px;
-    z-index: 2;
-    transition: left 1s,bottom 1s 1s;
-}
-#d2{
-    width: 150px;
-    margin-left: 25px;
-    position: absolute;
-    background: yellow;
-    height: 35px;
-    width: 150px;
-    border-radius: 15px;
-    margin-left: 20px;
-    z-index: 2;
-    transition: left 1s,bottom 1s 1s;
-}
-#d3{
     position: absolute;
     background: yellow;
     height: 35px;
@@ -56,6 +29,76 @@
     margin-left: 10px;
     z-index: 2;
     transition: left 1s,bottom 1s 1s;
+}
+.d1{
+    width: 120px;
+    margin-left: 40px;
+}
+.d2{
+    width: 150px;
+    margin-left: 25px;
+}
+.t1{
+    left: 0;
+}
+.t2{
+    left: 200px;
+}
+.t3{
+    left: 400px;
+}
+.p1 {
+    bottom:0;
+}
+.p2{
+    bottom:35px;
+}
+.p3{
+    bottom: 70px;
+}
+.p0{
+    bottom: 350px;
+} */
+
+.jogo{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 450px;
+    width: 600px;
+    background: tomato;
+}
+.torre{
+    position: relative;
+}
+.torre::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    bottom: 0;
+    left: 90px;
+    background: violet;
+    border-radius: 10px 10px 0 0;
+}
+.barra{
+    position: absolute;
+    background: yellow;
+    height: 35px;
+    width: 180px;
+    border-radius: 15px;
+    margin-left: 10px;
+    z-index: 2;
+    transition: left 1s,bottom 1s 1s;
+}
+.d1{
+    width: 120px;
+    margin-left: 40px;
+}
+.d2{
+    width: 150px;
+    margin-left: 25px;
 }
 .t1{
     left: 0;
